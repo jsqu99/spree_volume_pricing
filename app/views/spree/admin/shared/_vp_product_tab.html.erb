@@ -1,3 +1,4 @@
 <li<%== ' class="active"' if current == "Volume Pricing" %>>
-  <%= link_to t("volume_pricing"), volume_prices_admin_product_variant_url(@product, @product.master)  %>
+  <%# if we are on the variants tab, provide a link to the variant's volume prices, otherwise the master%>
+  <%= link_to t("volume_pricing"), volume_prices_admin_product_variant_url(@product, @variant.nil? ? @product.master : @variant)  %>
 </li>
